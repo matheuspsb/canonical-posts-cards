@@ -28,6 +28,7 @@ This project relies on the following dependencies:
 
 Here is an overview of the project's file structure:
 
+.
 ├── src
 │   ├── components
 │   │   └── Card.tsx
@@ -39,6 +40,13 @@ Here is an overview of the project's file structure:
 ├── package.json
 ├── tsconfig.json
 └── README.md
+
+- `src/components/Card.tsx`: The main file containing the implementation of the Card Component.
+- `src/types/index.tsx`: All the types of the project.
+- `src/utils/index.tsx`: A utility module providing functions for formatting dates using date-fns.
+- `src/App.tsx`: The entry point of the application, where the Card Component is rendered.
+- `package.json`: Configuration file for Yarn, including project dependencies.
+- `tsconfig.json`: Configuration file for TypeScript.
 
 ### `yarn start`
 
