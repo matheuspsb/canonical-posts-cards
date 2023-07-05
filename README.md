@@ -24,30 +24,6 @@ This project relies on the following dependencies:
 - date-fns: A library for formatting, manipulating, and parsing dates.
 - These dependencies are automatically installed when running the yarn install command.
 
-## File Structure
-
-Here is an overview of the project's file structure:
-
-.
-├── src
-│   ├── components
-│   │   └── Card.tsx
-│   ├── types
-│   │   └── index.tsx
-│   ├── utils
-│   │   └── index.tsx
-│   └── App.tsx
-├── package.json
-├── tsconfig.json
-└── README.md
-
-- `src/components/Card.tsx`: The main file containing the implementation of the Card Component.
-- `src/types/index.tsx`: All the types of the project.
-- `src/utils/index.tsx`: A utility module providing functions for formatting dates using date-fns.
-- `src/App.tsx`: The entry point of the application, where the Card Component is rendered.
-- `package.json`: Configuration file for Yarn, including project dependencies.
-- `tsconfig.json`: Configuration file for TypeScript.
-
 ### `yarn start`
 
 Runs the app in the development mode.\
