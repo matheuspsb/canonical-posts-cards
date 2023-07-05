@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { Card } from './components/Card';
+import { fetchPosts } from './utils/index';
+import { formatDate } from './utils/index'
+import { PostProps } from './types';
 
 function App() {
+  const [posts, setPosts] = useState<PostProps[]>([]);
+
+  useEffect(() => {
+    fetchPosts().then((data) => {
+      setPosts(data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="row" style={{marginTop: '20px'}}>
+        {posts.map((post) => (
+          <Card 
+            key={post.id} 
+            title={post.title.rendered} 
+            image={post.featured_media}
+            author={post._embedded.author[0]?.name}
+            date={formatDate(post.date)}
+            type={post._embedded['wp:term'][0][0].name}
+          />
+        ))}
+      </div>   
   );
 }
 
